@@ -1,0 +1,101 @@
+---
+layout: default
+---
+<style>
+  .home-section:last-of-type { border-bottom: none; }
+</style>
+
+<section id="hero">
+  <div class="hero-bg" style="background-image: url('{{ "/assets/hero.jpg" | relative_url }}');"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Aerospace Engineering Student</p>
+    <h1 class="hero-headline">
+      Building<br>things that<br><em>fly.</em>
+    </h1>
+    <p class="hero-desc">
+      I'm {{ site.author.name }}, studying aerospace engineering and documenting what I learn along the way.
+    </p>
+    <div class="hero-cta">
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View Projects</a>
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">Read the Blog</a>
+    </div>
+  </div>
+</section>
+
+<div class="home-section">
+  <p class="section-label">About</p>
+  <h2>Who I am</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm an <strong>aerospace engineering student</strong> documenting projects, builds, and the technical rabbit holes I fall into. This site is a record of what I'm working on and learning.</p>
+      <p>Outside of coursework I build things and try to write about the process honestly — including the parts that don't work.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">{{ site.stats.year | default: "—" }}</div>
+        <div class="stat-label">Year student</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.collections.projects.docs.size }}</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.posts.size }}</div>
+        <div class="stat-label">Blog posts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.stats.launches | default: "—" }}</div>
+        <div class="stat-label">Launches</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-more">
+    <a href="{{ '/about/' | relative_url }}" class="btn">More about me →</a>
+  </div>
+</div>
+
+<div class="home-section">
+  <p class="section-label">Projects</p>
+  <h2>Recent work</h2>
+  {% assign recent_projects = site.projects | sort: 'date' | reverse | limit: 2 %}
+  {% if recent_projects.size > 0 %}
+  <div class="projects-grid">
+    {% for project in recent_projects %}
+    <a href="{{ project.url | relative_url }}" class="project-card">
+      {% if project.category %}<span class="project-tag">{{ project.category }}</span>{% endif %}
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      {% if project.tools %}
+      <div class="project-meta">{% for tool in project.tools %}<span>{{ tool }}</span>{% endfor %}</div>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">// No projects yet — check back soon.</p>
+  {% endif %}
+  <div class="section-more">
+    <a href="{{ '/projects/' | relative_url }}" class="btn">All projects →</a>
+  </div>
+</div>
+
+<div class="home-section">
+  <p class="section-label">Blog</p>
+  <h2>Latest posts</h2>
+  {% if site.posts.size > 0 %}
+  <div class="blog-list">
+    {% for post in site.posts limit:3 %}
+    <a href="{{ post.url | relative_url }}" class="blog-post-row">
+      <span class="blog-date">{{ post.date | date: "%b %Y" }}</span>
+      <span class="blog-title">{{ post.title }}</span>
+      <span class="blog-tag-label">{{ post.tags | first }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">// No posts yet — check back soon.</p>
+  {% endif %}
+  <div class="section-more">
+    <a href="{{ '/blog/' | relative_url }}" class="btn">All posts →</a>
+  </div>
+</div>
