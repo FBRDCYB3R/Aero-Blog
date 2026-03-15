@@ -1,8 +1,8 @@
 ---
-title: "Your post title goes here"
+title: "Post 1"
 date: 2025-03-14
 tags: [Rocketry]
-description: "One sentence summary shown under the title."
+description: "Just a test post, more coming soon."
 read_time: 5
 ---
 
