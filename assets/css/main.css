@@ -22,7 +22,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -364,8 +364,8 @@ nav {
 .resume-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
 .resume-item:last-child { border-bottom: none; }
 .resume-role { font-weight: 500; font-size: .95rem; margin-bottom: .2rem; color: var(--ink); }
-.resume-org { font-size: .85rem; color: var(--muted); font-weight: 300; }
-.resume-desc { font-size: .85rem; color: var(--dim); margin-top: .4rem; line-height: 1.6; font-weight: 300; }
+.resume-org { font-size: .95rem; color: var(--ink2); font-weight: 400; }
+.resume-desc { font-size: .95rem; color: var(--ink2); margin-top: .4rem; line-height: 1.7; font-weight: 400; }
 .resume-period { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--dim); white-space: nowrap; }
 .skills-group { margin-bottom: 1.5rem; }
 .skills-group-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
