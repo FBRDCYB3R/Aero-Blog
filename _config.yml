@@ -1,0 +1,39 @@
+title: "Alex Chen"
+description: "Aerospace engineering student — projects, write-ups, and things I'm learning."
+url: "https://yourusername.github.io"   # ← change to your GitHub Pages URL
+baseurl: ""                              # ← leave empty if using yourusername.github.io
+                                         #   set to "/repo-name" if using a project repo
+
+author:
+  name: "Alex Chen"
+  email: "you@email.com"
+  github: "yourusername"
+  linkedin: "yourlinkedin"
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:slug/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

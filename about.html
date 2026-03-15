@@ -1,0 +1,87 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+<style>
+  .about-grid { display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start; }
+  .about-body h2 { font-size:1.1rem;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.01em; }
+  .about-body h2:first-child { margin-top:0; }
+  .about-body p { color:var(--muted);margin-bottom:1.25rem;line-height:1.9; }
+  .about-body p strong { color:var(--text);font-weight:600; }
+  .sidebar-block { background:var(--surface);border:1px solid var(--border);padding:1.5rem;border-radius:2px;margin-bottom:1.25rem;position:relative;overflow:hidden; }
+  .sidebar-block::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2)); }
+  .sidebar-block h3 { font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem; }
+  .sidebar-block ul { list-style:none; }
+  .sidebar-block li { font-size:.875rem;color:var(--muted);padding:.35rem 0;border-bottom:1px solid rgba(99,179,237,.06);display:flex;align-items:center;gap:.5rem; }
+  .sidebar-block li:last-child { border-bottom:none; }
+  .sidebar-block li::before { content:'›';color:var(--accent);font-weight:700; }
+  .sidebar-block a { color:var(--accent);text-decoration:none; }
+  .skills-group { margin-bottom:1.5rem; }
+  .skills-group-label { font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem; }
+  .skills-row { display:flex;flex-wrap:wrap;gap:.5rem; }
+  .skill-chip { font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;background:var(--surface);border:1px solid var(--border);border-radius:2px;color:var(--muted); }
+  @media(max-width:700px){ .about-grid{grid-template-columns:1fr;} }
+</style>
+
+<div class="page-header">
+  <p class="page-eyebrow">About</p>
+  <h1>Hi, I'm {{ site.author.name }}.</h1>
+  <p class="subtitle">Aerospace engineering student, builder, and occasional over-thinker of flight dynamics problems.</p>
+</div>
+
+<div class="page-content">
+  <div class="about-grid">
+    <div class="about-body">
+      <h2>Background</h2>
+      <p>
+        I'm an <strong>aerospace engineering student</strong> focused on propulsion systems and flight dynamics. I started this site because I wanted somewhere to document projects honestly — not just the polished results, but the dead ends too.
+      </p>
+      <p>
+        Most of my personal projects involve rocketry and small UAVs. When I'm not building things I'm usually reading about spaceflight history or running.
+      </p>
+
+      <h2>Technical skills</h2>
+      <div class="skills-group">
+        <div class="skills-group-label">Software &amp; simulation</div>
+        <div class="skills-row">
+          <span class="skill-chip">MATLAB</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">OpenRocket</span>
+          <span class="skill-chip">XFOIL</span>
+          <span class="skill-chip">Ansys Fluent</span>
+          <span class="skill-chip">SolidWorks</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-group-label">Hardware &amp; tools</div>
+        <div class="skills-row">
+          <span class="skill-chip">Arduino</span>
+          <span class="skill-chip">ArduPlane</span>
+          <span class="skill-chip">3D printing</span>
+          <span class="skill-chip">Composite layup</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-group-label">Other</div>
+        <div class="skills-row">
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">LaTeX</span>
+          <span class="skill-chip">Linux</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sidebar-block">
+        <h3>Find me</h3>
+        <ul>
+          {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a></li>{% endif %}
+          {% if site.author.linkedin %}<li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank">LinkedIn</a></li>{% endif %}
+          {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}">Email me</a></li>{% endif %}
+        </ul>
+      </div>
+      <a href="{{ '/resume/' | relative_url }}" class="btn btn-outline" style="width:100%;text-align:center;">View Resume →</a>
+    </div>
+  </div>
+</div>

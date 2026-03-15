@@ -1,0 +1,84 @@
+---
+layout: default
+title: Resume
+permalink: /resume/
+---
+<style>
+  .resume-grid { display:grid;grid-template-columns:1fr 1fr;gap:3rem; }
+  .resume-block { margin-bottom:2.5rem; }
+  .resume-block h3 { font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--border); }
+  .resume-item { display:grid;grid-template-columns:1fr auto;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(99,179,237,.06); }
+  .resume-item:last-child { border-bottom:none; }
+  .resume-role { font-weight:600;font-size:.95rem;margin-bottom:.2rem; }
+  .resume-org { font-size:.85rem;color:var(--muted); }
+  .resume-desc { font-size:.85rem;color:var(--dim);margin-top:.4rem;line-height:1.6; }
+  .resume-period { font-family:'Space Mono',monospace;font-size:11px;color:var(--dim);white-space:nowrap; }
+  .skills-group { margin-bottom:1.5rem; }
+  .skills-group-label { font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem; }
+  .skills-row { display:flex;flex-wrap:wrap;gap:.4rem; }
+  .skill-chip { font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;background:var(--surface);border:1px solid var(--border);border-radius:2px;color:var(--muted); }
+  .download-bar { display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);padding:1.25rem 1.5rem;border-radius:2px;margin-bottom:3rem; }
+  .download-bar p { font-size:.9rem;color:var(--muted); }
+  @media(max-width:700px){ .resume-grid{grid-template-columns:1fr;} }
+</style>
+
+<div class="page-header">
+  <p class="page-eyebrow">Resume</p>
+  <h1>Background &amp; experience.</h1>
+</div>
+
+<div class="page-content">
+  <div class="download-bar">
+    <p>Prefer a PDF? Download the full resume.</p>
+    <a href="#" class="btn btn-outline">Download CV (PDF) ↓</a>
+  </div>
+
+  <div class="resume-grid">
+    <div>
+      <div class="resume-block">
+        <h3>Education</h3>
+        <div class="resume-item">
+          <div>
+            <div class="resume-role">B.S. Aerospace Engineering</div>
+            <div class="resume-org">Your University</div>
+            <div class="resume-desc">Edit this in resume.html</div>
+          </div>
+          <div class="resume-period">2022 – 2026</div>
+        </div>
+      </div>
+
+      <div class="resume-block">
+        <h3>Experience</h3>
+        <div class="resume-item">
+          <div>
+            <div class="resume-role">Your Role Here</div>
+            <div class="resume-org">Organization</div>
+            <div class="resume-desc">Description of what you did.</div>
+          </div>
+          <div class="resume-period">20XX – present</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="resume-block">
+        <h3>Technical skills</h3>
+        <div class="skills-group">
+          <div class="skills-group-label">Simulation &amp; analysis</div>
+          <div class="skills-row">
+            <span class="skill-chip">MATLAB</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">OpenRocket</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-label">Other</div>
+          <div class="skills-row">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">LaTeX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="page-header">
+  <p class="page-eyebrow">Blog</p>
+  <h1>Write-ups &amp; notes.</h1>
+  <p class="subtitle">Things I've learned, built, or spent too long debugging.</p>
+</div>
+
+<div class="page-content">
+  {% if site.posts.size > 0 %}
+  <div class="blog-list">
+    {% for post in site.posts %}
+    <a href="{{ post.url | relative_url }}" class="blog-post-row">
+      <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+      <span class="blog-title">{{ post.title }}</span>
+      <span class="blog-tag-label">{{ post.tags | first }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">// No posts yet — check back soon.</p>
+  {% endif %}
+</div>

@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="page-header">
+  <p class="page-eyebrow">Blog · {{ page.tags | first | default: "Write-up" }}</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="subtitle">{{ page.description }}</p>{% endif %}
+</div>
+
+<div class="page-content">
+  <a href="{{ '/blog/' | relative_url }}" class="back-link">← All posts</a>
+
+  <div class="post-layout">
+    <article class="post-body">
+      {{ content }}
+    </article>
+
+    <aside>
+      <div class="post-meta-card">
+        <div class="meta-row">
+          <div class="meta-item">
+            <label>Published</label>
+            <span>{{ page.date | date: "%B %d, %Y" }}</span>
+          </div>
+          {% if page.tags.size > 0 %}
+          <div class="meta-item">
+            <label>Tag</label>
+            <span class="post-tag-badge">{{ page.tags | first }}</span>
+          </div>
+          {% endif %}
+          {% if page.read_time %}
+          <div class="meta-item">
+            <label>Read time</label>
+            <span>~{{ page.read_time }} min</span>
+          </div>
+          {% endif %}
+          {% if page.project %}
+          <div class="meta-item">
+            <label>Related project</label>
+            <a href="{{ '/projects/' | append: page.project | relative_url }}">{{ page.project_title | default: page.project }} →</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>

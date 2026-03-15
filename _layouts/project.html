@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="page-header">
+  <p class="page-eyebrow">Projects · {{ page.category | default: "Build" }}</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="subtitle">{{ page.description }}</p>{% endif %}
+</div>
+
+<div class="page-content">
+  <a href="{{ '/projects/' | relative_url }}" class="back-link">← All projects</a>
+
+  <div class="post-layout">
+    <article class="post-body">
+      {{ content }}
+    </article>
+
+    <aside>
+      <div class="post-meta-card">
+        <div class="meta-row">
+          {% if page.status %}
+          <div class="meta-item">
+            <label>Status</label>
+            <span>{{ page.status }}</span>
+          </div>
+          {% endif %}
+          {% if page.category %}
+          <div class="meta-item">
+            <label>Category</label>
+            <span class="post-tag-badge">{{ page.category }}</span>
+          </div>
+          {% endif %}
+          {% if page.tools %}
+          <div class="meta-item">
+            <label>Tools</label>
+            <span style="font-size:0.85rem;color:var(--muted);">{{ page.tools | join: ", " }}</span>
+          </div>
+          {% endif %}
+          {% if page.github %}
+          <div class="meta-item">
+            <label>Code</label>
+            <a href="{{ page.github }}" target="_blank">View on GitHub →</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>

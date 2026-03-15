@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — {{ site.author.name }}{% else %}{{ site.author.name }}{% endif %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.extra_css %}
+  <style>{{ page.extra_css }}</style>
+  {% endif %}
+</head>
+<body>
+
+  <nav>
+    <a href="{{ '/' | relative_url }}" class="nav-logo">// {{ site.author.name | upcase | split: ' ' | first }}.{{ site.author.name | upcase | split: ' ' | last }}</a>
+    <ul class="nav-links">
+      <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Projects</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+      <li><a href="{{ '/resume/' | relative_url }}" {% if page.url contains '/resume' %}class="active"{% endif %}>Resume</a></li>
+    </ul>
+  </nav>
+
+  {{ content }}
+
+  <div class="section-divider"></div>
+
+  <footer>
+    <span class="copy">© {{ 'now' | date: '%Y' }} {{ site.author.name }}</span>
+    <div class="social-links">
+      {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>{% endif %}
+      {% if site.author.linkedin %}<a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank">LinkedIn</a>{% endif %}
+      {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
+    </div>
+  </footer>
+
+</body>
+</html>

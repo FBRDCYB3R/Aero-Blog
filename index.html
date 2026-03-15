@@ -1,0 +1,147 @@
+---
+layout: default
+---
+<style>
+  #hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 2rem; max-width: 900px; margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    color: var(--accent2); letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before { content:''; display:inline-block; width:32px; height:1px; background:var(--accent2); }
+  h1 { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  .name-accent { color: transparent; -webkit-text-stroke: 1px var(--accent); }
+  .hero-desc { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 2rem;
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    color: var(--dim); letter-spacing: 0.15em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-scroll::after {
+    content: ''; display: block; width: 48px; height: 1px; background: var(--dim);
+    animation: scrollline 2s ease-in-out infinite;
+  }
+  @keyframes scrollline { 0%,100%{opacity:.3;width:48px} 50%{opacity:1;width:72px} }
+  .home-section { position:relative;z-index:1;max-width:900px;margin:0 auto;padding:5rem 2rem; }
+  .section-label { font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem; }
+  h2 { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em;margin-bottom:2.5rem;line-height:1.1; }
+  .section-more { margin-top: 2rem; }
+  .about-grid { display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start; }
+  .about-text p { color:var(--muted);margin-bottom:1.25rem;line-height:1.9; }
+  .about-text p strong { color:var(--text);font-weight:600; }
+  .stat-grid { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
+  .stat-card { background:var(--surface);border:1px solid var(--border);padding:1.25rem;border-radius:2px;position:relative;overflow:hidden; }
+  .stat-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2)); }
+  .stat-num { font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem; }
+  .stat-label { font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase; }
+  @media(max-width:700px){ .about-grid{grid-template-columns:1fr;gap:2.5rem;} .home-section{padding:4rem 1.25rem;} }
+</style>
+
+<section id="hero">
+  <p class="hero-eyebrow">Aerospace Engineering Student</p>
+  <h1>
+    Building<br>things that<br>
+    <span class="name-accent">fly.</span>
+  </h1>
+  <p class="hero-desc">
+    I'm {{ site.author.name }}, studying aerospace engineering and documenting what I learn along the way.
+  </p>
+  <div class="hero-cta">
+    <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View Projects</a>
+    <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">Read the Blog</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="section-divider"></div>
+
+<div class="home-section">
+  <p class="section-label">About</p>
+  <h2>Who I am</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm an <strong>aerospace engineering student</strong> documenting projects, builds, and the technical rabbit holes I fall into. This site is a record of what I'm working on and learning.</p>
+      <p>Outside of coursework I build things and try to write about the process honestly — including the parts that don't work.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">{{ site.stats.year | default: "—" }}</div>
+        <div class="stat-label">Year student</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.collections.projects.docs.size }}</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.posts.size }}</div>
+        <div class="stat-label">Blog posts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">{{ site.stats.launches | default: "—" }}</div>
+        <div class="stat-label">Launches</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-more">
+    <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">More about me →</a>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="home-section">
+  <p class="section-label">Projects</p>
+  <h2>Recent work</h2>
+  {% assign recent_projects = site.projects | sort: 'date' | reverse | limit: 2 %}
+  {% if recent_projects.size > 0 %}
+  <div class="projects-grid">
+    {% for project in recent_projects %}
+    <a href="{{ project.url | relative_url }}" class="project-card">
+      {% if project.category %}<span class="project-tag">{{ project.category }}</span>{% endif %}
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      {% if project.tools %}
+      <div class="project-meta">
+        {% for tool in project.tools %}<span>{{ tool }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">// No projects yet — check back soon.</p>
+  {% endif %}
+  <div class="section-more">
+    <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline">All projects →</a>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="home-section">
+  <p class="section-label">Blog</p>
+  <h2>Latest posts</h2>
+  {% if site.posts.size > 0 %}
+  <div class="blog-list">
+    {% for post in site.posts limit:3 %}
+    <a href="{{ post.url | relative_url }}" class="blog-post-row">
+      <span class="blog-date">{{ post.date | date: "%b %Y" }}</span>
+      <span class="blog-title">{{ post.title }}</span>
+      <span class="blog-tag-label">{{ post.tags | first }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">// No posts yet — check back soon.</p>
+  {% endif %}
+  <div class="section-more">
+    <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">All posts →</a>
+  </div>
+</div>
