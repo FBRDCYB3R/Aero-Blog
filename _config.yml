@@ -15,6 +15,11 @@ markdown: kramdown
 highlighter: rouge
 permalink: /blog/:slug/
 
+stats:
+  year: "2nd"
+  launches: "0-For now'
+
+
 # Collections
 collections:
   projects:
