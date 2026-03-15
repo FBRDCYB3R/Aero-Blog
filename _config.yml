@@ -9,6 +9,9 @@ author:
   email: "aditya.attrey@gmail.com"
   github: "FBRDCYB3R"
   linkedin: "www.linkedin.com/in/aditya-attrey"
+stats:
+  year: "2nd"
+  launches: 0
 
 # Jekyll settings
 markdown: kramdown
