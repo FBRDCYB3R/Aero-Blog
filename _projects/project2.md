@@ -1,5 +1,5 @@
 ---
-title: "Fine Tuning an LLM with personal Notes to use as a "second brain""
+title: "Fine Tuning an LLM with personal Notes to use as a Second Brain"
 date: 2024-06-13  
 category: Software
 tags: [Software]
