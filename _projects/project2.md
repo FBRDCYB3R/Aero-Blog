@@ -21,8 +21,8 @@ Because free Colab instances disconnect after a few hours of use, I couldn't run
 
 ## The Challenge
 
-- **Hardware Constraints:** A standard 7B model takes about 14GB of VRAM just to load in 16-bit precision, leaving zero room for the actual training process on a 16GB T4 GPU.
-- **Time Constraints:** Google Colab terminates sessions randomly or after usage limits are hit (usually 4–12 hours). A full fine-tuning run on a sizable dataset takes much longer than a single session allows.
+**Hardware Constraints:** A standard 7B model takes about 14GB of VRAM just to load in 16-bit precision, leaving zero room for the actual training process on a 16GB T4 GPU.  
+**Time Constraints:** Google Colab terminates sessions randomly or after usage limits are hit (usually 4–12 hours). A full fine-tuning run on a sizable dataset takes much longer than a single session allows.
 
 ---
 
