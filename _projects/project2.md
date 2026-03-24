@@ -7,7 +7,7 @@ description: "LLM to help me study."
 read_time: 10
 ---
 
-# Project Write-Up: Fine-Tuning Llama 2.1 (7B) on a Budget (no really)
+# Project Write-Up: Fine-Tuning Llama 2.1 (7B) on a Budget
 
 ## Project Overview
 
