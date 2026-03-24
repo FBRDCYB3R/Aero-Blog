@@ -1,6 +1,7 @@
 ---
-title: "Fine Tuning an LLM with personal Notes to use as a "second brain"
-date: 2024-06-13
+title: "Fine Tuning an LLM with personal Notes to use as a "second brain""
+date: 2024-06-13  
+category: Software
 tags: [Software]
 description: "LLM to help me study."
 read_time: 10
