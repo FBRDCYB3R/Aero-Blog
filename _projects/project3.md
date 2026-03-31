@@ -46,7 +46,7 @@ $$\text{Cycles}_{new} \approx \text{Cycles}_{100\%} \times \left(\frac{100}{\tex
 
 If we only factor in the smaller DoD:
 
-$$\text{Cycles}_{DoD} \approx 500 \times \left(\frac{100}{60}\right)^{1.5} \approx 500 \times (1.66)^{1.5} \approx 1,075 \text{ cycles}$$
+$$Cycles_{DoD} \approx 500 \times \left(\frac{100}{60}\right)^{1.5} \approx 500 \times (1.66)^{1.5} \approx 1075$$ cycles
 
 #### 2. The Voltage Stress Factor
 LiPo batteries operate between roughly 3.0V (empty) and 4.2V (100% full). Pushing a battery all the way to 4.2V puts massive chemical stress on the cathode. 
