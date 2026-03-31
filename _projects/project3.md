@@ -26,21 +26,21 @@ The only issue with this design was it wasn't truly autonomous. I would still ha
 To make the system a true "set and forget" device, I paired the battery with a small 5V mini solar panel. The solar panel routes power directly into a TP4056 charging module. The TP4056 is the unsung hero of this build: it takes the fluctuating voltage from the sun, safely regulates it to charge the Li-Po cell, and provides built-in protection circuits. During the day, the sun trickles enough power into the battery to easily cover the tiny energy debt incurred by the ESP32's brief wake-up cycles.
 
 Now, just like on your phone, over time the life of the battery degrades if you cycle it too much. To prevent this, I would only charge the battery to around 80% and start the recharge process when the battery dropped below 20%. I was able to come to this conclusion based on these calculations:  
-![Calculations]({{ "/assets/esp32math.png" | relative_url }})
+![Calculations]({{ "/assets/esp32math1.png" | relative_url }})
 
 ## The Bill of Materials
 
 If you want to replicate this, here is exactly what you need:
 
- **ESP32 Development Board:** Look for an ESP32-WROOM-32 Dev Kit with pre-soldered headers.
- **Capacitive Soil Moisture Sensor (v1.2 or v2.0):** This is critical. Do not buy the cheap "resistive" sensors with bare metal prongs. They suffer from electrolysis and will corrode away into the soil within weeks. Capacitive sensors are encased and measure moisture via changes in capacitance. 
- **5V Mini Solar Panel:** A small 1W to 1.5W epoxy solar panel is perfect.
- **TP4056 Battery Charger:** A popular, low-cost, and complete linear charger integrated circuit with battery protection.
- **1x Weather Hardened Li-Po or 18650 Battery:** Ensure it has enough capacity (e.g., 2000mAh+) to survive cloudy weeks.
- **Battery Holder:** A standard 18650 or Li-Po enclosure to keep the cell secure.
- **Waterproof Junction Box:** An IP65 or IP67 rated plastic enclosure (roughly 100mm x 68mm x 50mm).
- **Cable Gland (PG7):** To create a waterproof seal where the sensor wires exit the box.
- **Misc:** Female-to-Male jumper wires, a few packets of silica gel (desiccant), and optionally some clear nail polish or conformal coating.
+ **ESP32 Development Board:** Look for an ESP32-WROOM-32 Dev Kit with pre-soldered headers.   
+ **Capacitive Soil Moisture Sensor (v1.2 or v2.0):** This is critical. Do not buy the cheap "resistive" sensors with bare metal prongs. They suffer from electrolysis and will corrode away into the soil within weeks. Capacitive sensors are encased and measure moisture via changes in capacitance.   
+ **5V Mini Solar Panel:** A small 1W to 1.5W epoxy solar panel is perfect.  
+ **TP4056 Battery Charger:** A popular, low-cost, and complete linear charger integrated circuit with battery protection.  
+ **1x Weather Hardened Li-Po or 18650 Battery:** Ensure it has enough capacity (e.g., 2000mAh+) to survive cloudy weeks.  
+ **Battery Holder:** A standard 18650 or Li-Po enclosure to keep the cell secure.  
+ **Waterproof Junction Box:** An IP65 or IP67 rated plastic enclosure (roughly 100mm x 68mm x 50mm).  
+ **Cable Gland (PG7):** To create a waterproof seal where the sensor wires exit the box.  
+ **Misc:** Female-to-Male jumper wires, a few packets of silica gel (desiccant), and optionally some clear nail polish or conformal coating.  
 
 ![Wiring Diagram]({{ "/assets/esp32.png" | relative_url }})
 
