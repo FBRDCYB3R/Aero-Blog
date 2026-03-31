@@ -42,7 +42,7 @@ By stopping the charge at 80% and plugging it in at 20% you can reduce the batte
 Your new DoD is 60% (80% - 20% = 60%).
 Battery fatigue follows an inverse power-law curve. When you reduce the DoD, the number of physical cycles the battery can handle increases exponentially. An accepted empirical formula for cycle life based on DoD is:
 
-$$\text{Cycles}_{new} \approx \text{Cycles}_{100\%} \times \left(\frac{100}{\text{DoD}_{new}}\right)^{1.5}$$
+$$Cycles_{new} \approx Cycles_{100} \times \left(\frac{100}{DoD_{new}}\right)^{1.5}$$
 
 If we only factor in the smaller DoD:
 
