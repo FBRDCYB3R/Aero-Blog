@@ -11,7 +11,7 @@ author:
   linkedin: "aditya-attrey"
 stats:
   year: "2nd"
-  launches: 0
+  launches: 11680 
 
 # Jekyll settings
 markdown: kramdown
@@ -21,7 +21,7 @@ permalink: /blog/:slug/
 
 # Collections
 collections:
-  projects:
+  projects: 4
     output: true
     permalink: /projects/:slug/
 
