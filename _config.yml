@@ -21,8 +21,8 @@ permalink: /blog/:slug/
 
 # Collections
 collections:
-  projects: 4
-    output: false
+  projects: 
+    output: true
     permalink: /projects/:slug/
 
 defaults:
