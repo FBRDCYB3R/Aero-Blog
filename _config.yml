@@ -1,7 +1,7 @@
 title: "Aditya Attrey"
 description: "Aerospace engineering student — projects, write-ups, and things I'm learning."
-url: "https://fbrdcyb3r.github.io"   # ← change to your GitHub Pages URL
-baseurl: "/Aero-Blog"                              # ← leave empty if using yourusername.github.io
+url: "https://adityaattrey.com"   # ← change to your GitHub Pages URL
+baseurl: ""                             # ← leave empty if using yourusername.github.io
                                          #   set to "/repo-name" if using a project repo
 
 author:
