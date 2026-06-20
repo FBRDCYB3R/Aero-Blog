@@ -110,4 +110,6 @@ By dynamically feeding the exact barometric pressure of the launch elevation (e.
 
 ## Future Developments
 
-The next phase of this project involves writing a script to automatically export the generated nozzle expansion ratio into a `.csv` coordinate curve, allowing for automated spline generation and revolving in CAD software.
+The next phase of this project involves writing a script to automatically export the generated nozzle expansion ratio into a `.csv` coordinate curve, allowing for automated spline generation and revolving in CAD software.  
+
+P.S: If you would like the .m file you can reachout to my email and I will provide the .m file :)
